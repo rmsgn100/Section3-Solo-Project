@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+Add Twitter Users
+{% if message %}
+{{ message }}
+{% endif %}
+{% endblock  %}
+
+{% block lead  %}
+See a Twitter's information
+{% endblock  %}
+
+{% block main_body  %}
+Add an User, press the add button
+
+
+<form method="POST" action="/add">
+  <input name="user_name" class="form-control" type="text" placeholder="Username">
+  <br/>
+  <input type="submit" class="btn btn-primary" value="Add" />
+</form>
+
+<br/>
+{% if data %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Username</th>
+      <th scope="col">Full name</th>
+      <th scope="col">Followers</th>
+      <th scope="col">Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in data %}
+    <tr>
+      <th scope="row">{{ user.id }}</th>
+      <td>{{ user.username }}</td>
+      <td>{{ user.full_name }}</td>
+      <td>{{ user.followers }}</td>
+      <td>{{ user.location }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+{% endblock  %}
