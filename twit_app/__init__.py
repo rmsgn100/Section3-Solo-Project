@@ -3,8 +3,8 @@ from twit_app.routes import main_routes, add_routes, get_routes, delete_routes, 
 from twit_app.models import db, migrate
 
 
-DATABASE_URI = "sqlite:///twit.sqlite3"
-# DATABASE_URI = "postgres://vzzdiaafvimmbi:a5930e943ae78e2c01d66d331736c6c171b8f95147ced2345ec3b68e928a3a22@ec2-3-216-89-250.compute-1.amazonaws.com:5432/d64eis3ttfk6jp"
+# DATABASE_URI = "sqlite:///twit.sqlite3"
+DATABASE_URI = 'postgres://fdodnqeiffvpuw:289eff8158f126543c309daa3c187fb43edbcb73011ce51555bc80bfa72edc80@ec2-54-172-219-218.compute-1.amazonaws.com:5432/dd10mropml40d5'
 
 # factory pattern
 def create_app():
