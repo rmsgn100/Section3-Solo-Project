@@ -1,10 +1,12 @@
+import os
 from flask import Flask
 from twit_app.routes import main_routes, add_routes, get_routes, delete_routes, update_routes, compare_routes
 from twit_app.models import db, migrate
-
+from dotenv import load_dotenv
+load_dotenv()
 
 # DATABASE_URI = "sqlite:///twit.sqlite3"
-DATABASE_URI = 'postgres://fdodnqeiffvpuw:289eff8158f126543c309daa3c187fb43edbcb73011ce51555bc80bfa72edc80@ec2-54-172-219-218.compute-1.amazonaws.com:5432/dd10mropml40d5'
+DATABASE_URI = os.getenv('DATABASE_URL')
 
 # factory pattern
 def create_app():
