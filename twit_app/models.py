@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-import pickle
+# import pickle
+import pickle5 as pickle
 
 db = SQLAlchemy()
 migrate = Migrate()
