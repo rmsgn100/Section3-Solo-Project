@@ -14,7 +14,7 @@ def index():
         result = request.form
 
         user = api.get_user(screen_name=result["user_name"])
-        raw_tweets = api.user_timeline(screen_name=result["user_name"], count=30,
+        raw_tweets = api.user_timeline(screen_name=result["user_name"], count=100,
                                         include_rts=False, exclude_replies=True,
                                         tweet_mode="extended")
 

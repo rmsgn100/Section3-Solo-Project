@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+Find an User's Location
+{% if message %}
+{{ message }}
+{% endif %}
+{% endblock  %}
+
+{% block lead  %}
+{% endblock  %}
+
+{% block main_body  %}
+This is Case-Sensitive
+
+
+<form method="POST" action="/map">
+  <input name="find_location" class="form-control" type="text" placeholder="Username">
+  <br/>
+  <input type="submit" class="btn btn-primary" value="Find" />
+</form>
+
+<br/>
+
+<h2>Google Map</h2>
+
+<div id="googleMap" style="width:100%;height:400px;"></div>
+
+
+<script>
+function myMap() {
+var myCenter=new google.maps.LatLng({{ lat }},{{ lon }});
+var mapProp= {
+  center:myCenter,
+  zoom:4,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({position: myCenter});
+marker.setMap(map);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZk1yba_8v_cizSepXQSBoFq7erAylLl8&callback=myMap"></script>
+{% endblock  %}
+
+
