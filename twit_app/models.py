@@ -30,6 +30,24 @@ class Tweet(db.Model):
         return f"< Tweet {self.id} {self.text} >"
 
 
+# class Country(db.Model):
+#     woeid = db.Column(db.BigInteger, primary_key=True)
+#     country_name = db.Column(db.String, db.ForeignKey("user.location"))
+
+#     def __repr__(self):
+#         return f"< Country {self.woeid} {self.country_name} >"
+
+
+class Trend(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    topic = db.Column(db.String)
+    woeid = db.Column(db.BigInteger)
+    country_name = db.Column(db.String)
+
+    def __repr__(self):
+        return f"< Trend {self.id} {self.topic} {self.woeid} >"
+
+
 def parse_records(db_records):
     parsed_list = []
     for record in db_records:

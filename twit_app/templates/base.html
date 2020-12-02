@@ -6,8 +6,9 @@
     {% block head %} {% endblock %}
 
     <style>
-      nav {width: 545px; margin-left: 34%; margin-top: 10px; margin-bottom: 10px;}
+      nav {width: 620px; margin-left: 32%; margin-top: 10px; margin-bottom: 10px; border-radius: 15px;}
       body {background-color: #010036;}
+      .list-group {width:400px; margin-left: 31%;}
       </style>
 
   </head>
@@ -40,6 +41,16 @@
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="/map">Map <span class="sr-only">(current)</span></a>
+          </li>
+          <!-- <li class="nav-item active">
+            <a class="nav-link" href="/trend">Trend <span class="sr-only">(current)</span></a>
+          </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Trend </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/trend">Show </a>
+              <a class="dropdown-item" href="/trend_delete">Delete </a>
+            </div>
           </li>
         </ul>
       </div>

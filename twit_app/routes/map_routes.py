@@ -20,8 +20,6 @@ def index():
         user_info = User.query.filter_by(username=input_name).one()
         user_location = user_info.__dict__['location']
 
-
-
         locator = Nominatim(user_agent="myGeocoder")
         location = locator.geocode(user_location)
 

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+Trending Topics in the Country Now
+{% if message %}
+{{ message }}
+{% endif %}
+{% endblock  %}
+
+{% block lead  %}
+{% endblock  %}
+
+{% block main_body  %}
+This is Case-Sensitive
+<br/>
+ex) Korea, USA, Japan, UK, France ...
+
+
+<form method="POST" action="/trend">
+  <input name="country_name" class="form-control" type="text" placeholder="Country">
+  <br/>
+  <input type="submit" class="btn btn-primary" value="Find" />
+</form>
+
+<br/>
+<br/>
+
+<ul class="list-group">
+    <li class="list-group-item active" style="background-color: #010036; border:  #010036;">Top 10 Trending Topics</li>
+    {% for trend in trend_list %}
+    <li class="list-group-item">{{ trend }}</li>
+    {% endfor %}
+</ul>
+
+
+
+
+
+{% endblock  %}

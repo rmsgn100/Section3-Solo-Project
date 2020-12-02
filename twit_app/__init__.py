@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from twit_app.routes import main_routes, add_routes, get_routes, delete_routes, update_routes, compare_routes, map_routes
+from twit_app.routes import main_routes, add_routes, get_routes, delete_routes, update_routes, compare_routes, map_routes, trend_routes, trend_delete_routes
 from twit_app.models import db, migrate
 from dotenv import load_dotenv
 load_dotenv()
@@ -24,6 +24,8 @@ def create_app():
     app.register_blueprint(update_routes.update_routes, url_prefix='/update')
     app.register_blueprint(compare_routes.compare_routes, url_prefix='/compare')
     app.register_blueprint(map_routes.map_routes, url_prefix='/map')
+    app.register_blueprint(trend_routes.trend_routes, url_prefix='/trend')
+    app.register_blueprint(trend_delete_routes.trend_delete_routes, url_prefix='/trend_delete')
     return app
 
 

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+Delete Trends
+{% if message %}
+{{ message }}
+{% endif %}
+{% endblock  %}
+
+{% block lead  %}
+Delete Trends you saw before
+{% endblock  %}
+
+{% block main_body  %}
+This is Case-Sensitive
+
+
+<form method="POST" action="/trend_delete">
+  <input name="delete_country" class="form-control" type="text" placeholder="Country">
+  <br/>
+  <input type="submit" class="btn btn-primary" value="Delete" />
+</form>
+
+<br/>
+{% if data %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Topics</th>
+      <th scope="col">WOEID</th>
+      <th scope="col">Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for trend in data %}
+    <tr>
+      <th scope="row">{{ trend.id }}</th>
+      <td>{{ trend.topic }}</td>
+      <td>{{ trend.woeid }}</td>
+      <td>{{ trend.country_name }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+{% endblock  %}
